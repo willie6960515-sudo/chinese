@@ -1076,6 +1076,34 @@ return {ASSETS,STROKE_AUDIO,strokeNames,lines,lineNotes,lesson,words,phonetics,v
  artNames:{mountain:'爸爸和孩子在山上喊話',hill:'課本的青青的山',dad:'課本的爸爸與孩子',friends:'兩位小朋友一起玩',compare:'課本的他與也、朋與月對照'}};
 })();
 
+
+courses[2].lineNotes ||= {};
+for (const [pattern, notes] of [
+ ['（張開）（小手）','ㄓㄤ ㄎㄞ ㄒㄧㄠˇ ㄕㄡˇ'],
+ ['（舉起）（雙手）','ㄐㄩˇ ㄑㄧˇ ㄕㄨㄤ ㄕㄡˇ'],
+ ['（打開）（書本）','ㄉㄚˇ ㄎㄞ ㄕㄨ ㄅㄣˇ'],
+ ['（印）一（印）','ㄧㄣˋ ㄧˊ ㄧㄣˋ'],
+ ['（拍）一（拍）','ㄆㄞ ㄧˋ ㄆㄞ'],
+ ['（看）一（看）','ㄎㄢˋ ㄧˊ ㄎㄢˋ'],
+ ['一（朵朵）（小花）','ㄧˋ ㄉㄨㄛˇ ㄉㄨㄛˇ ㄒㄧㄠˇ ㄏㄨㄚ'],
+ ['一（張張）（笑臉）','ㄧˋ ㄓㄤ ㄓㄤ ㄒㄧㄠˋ ㄌㄧㄢˇ'],
+ ['一（條條）（小魚）','ㄧˋ ㄊㄧㄠˊ ㄊㄧㄠˊ ㄒㄧㄠˇ ㄩˊ']
+]) {
+ const readings=notes.split(' '); let n=0;
+ courses[2].lineNotes[pattern]=Array.from(pattern,ch=>'（）'.includes(ch)?'':readings[n++]);
+}
+// Second lesson patterns confirmed by the teacher.
+courses[2].lesson[3].title='照樣造句與自己造句';
+courses[2].lesson[3].pages.splice(0,3,...[{"type":"sequence","ref":"第二課照樣造句","time":"約 10 分鐘","fix":"先做動作或指圖，再讓孩子分段跟說，最後自己換詞。","check":"換一組詞，仍能保持格式，並說出這樣說的意思。","revealLabels":["亮出課文例子","亮出照樣例子","換一組試試看"],"title":"照樣造句｜（張開）（小手）","goal":"把動作和動作的對象搭配起來，換詞後仍通順。","say":"把小手張開。你做了什麼動作？張開的是什麼？我們把兩個答案連起來說。","act":"先做張開手的動作，指動作和身體部位，再亮出課文例子。","reply":"張開小手。張開是動作，小手是張開的對象。","items":["（張開）（小手）","（舉起）（雙手）","（打開）（書本）"],"targets":["張開","舉起","打開"],"stepGuides":[{"say":"前面說做什麼，後面說對什麼做。試著把雙手往上舉，這次可以怎麼說？","act":"讓孩子做動作、先說答案，再亮下一組。","reply":"舉起雙手。"},{"say":"兩組都是動作加上對象。現在拿一本書，先想要做什麼，再把對象接在後面。","reply":"打開書本。拿起書本。","fix":"讓孩子先拿起書本，問做了什麼，再問拿起什麼。"},{"say":"換你挑一樣教室裡的東西，說出做什麼和對什麼做。請同桌照你說的做，看看聽得懂嗎？","reply":"拿起鉛筆。合上書本。","check":"孩子能自己換動作和對象，同桌能照著做。"}]},{"type":"sequence","ref":"第二課照樣造句","time":"約 10 分鐘","fix":"先做動作或指圖，再讓孩子分段跟說，最後自己換詞。","check":"換一組詞，仍能保持格式，並說出這樣說的意思。","revealLabels":["亮出課文例子","亮出照樣例子","換一組試試看"],"title":"照樣造句｜（印）一（印）","goal":"用同一個動作填入前後兩格，理解表示試著或短暫做一個動作。","say":"先用手掌在桌面輕輕印一下。聽「印」和「印一印」，哪個說法像在邀請你試試這個動作？","act":"做一次動作，再指兩個相同的印。提醒孩子前後換成同一個動作。","reply":"印一印，像請我試著印一下。","items":["（印）一（印）","（拍）一（拍）","（看）一（看）"],"targets":["印","拍","看"],"stepGuides":[{"say":"兩個空格放同一個動作。把印換成拍，前後都換，可以怎麼說？","reply":"拍一拍。","fix":"帶念「拍、一、拍」，前後兩格同時指拍。"},{"say":"拍一拍，像是請你輕輕做一下。現在請同桌看桌上的書，要怎麼邀請他看一下？","reply":"看一看。","act":"先讓孩子自己說，等答案後再亮例子。"},{"say":"你想邀請同桌試哪個動作？可以說摸一摸、想一想，再說要摸什麼或想什麼。","reply":"摸一摸桌面。想一想答案。","check":"能用同一個動作組成動作一動作，並在合適情境使用。"}]},{"type":"sequence","ref":"第二課照樣造句","time":"約 10 分鐘","fix":"先做動作或指圖，再讓孩子分段跟說，最後自己換詞。","check":"換一組詞，仍能保持格式，並說出這樣說的意思。","revealLabels":["亮出課文例子","亮出照樣例子","換一組試試看"],"title":"照樣造句｜一（朵朵）（小花）","goal":"配合事物選量詞並重複，說出一個又一個的畫面。","say":"指一朵花，再看看好多朵花。一朵朵小花，讓你想到幾朵？用手指一個接一個點給我看。","act":"先指課本的花，再逐一點數，讓孩子先說一朵，接著說一朵朵。","reply":"有好幾朵花，一朵接一朵。","items":["一（朵朵）（小花）","一（張張）（笑臉）","一（條條）（小魚）"],"targets":["朵","張","條"],"stepGuides":[{"say":"前面的「一」留下來，中間換成適合那樣東西的量詞，再說兩次。笑臉可以說一張笑臉，好多張要怎麼說？","reply":"一張張笑臉。","fix":"先念一張笑臉，再把張重複一次。"},{"say":"看一條小魚，再想像好幾條小魚一起游。前面的張張要換成什麼？後面的事物也要跟著換。","reply":"一條條小魚。","act":"先讓孩子口答，再亮最後一組核對。"},{"say":"現在換成車子。先說一輛車子，再試著說好幾輛接連出現的樣子。","reply":"一輛輛車子。","check":"換新事物時，能先說合適的單位，再說一次重複的量詞。"}]}]);
+Object.assign(courses[2].phonetics,{"舉": "ㄐㄩˇ", "雙": "ㄕㄨㄤ", "打": "ㄉㄚˇ", "書": "ㄕㄨ", "本": "ㄅㄣˇ", "拿": "ㄋㄚˊ", "合": "ㄏㄜˊ", "鉛": "ㄑㄧㄢ", "筆": "ㄅㄧˇ", "拍": "ㄆㄞ", "看": "ㄎㄢˋ", "條": "ㄊㄧㄠˊ", "輛": "ㄌㄧㄤˋ", "摸": "ㄇㄛ", "想": "ㄒㄧㄤˇ"});
+// Parentheses in the lesson headings mark replaceable parts; read examples as natural phrases.
+for(const page of courses[2].lesson[3].pages.slice(0,3)) {
+ page.items=page.items.map(pattern=>{
+  const clean=pattern.replace(/[（）]/g,'');
+  courses[2].lineNotes[clean]=courses[2].lineNotes[pattern].filter((note,i)=>!('（）'.includes(pattern[i])));
+  return clean;
+ });
+}
 </script>
 <script>const $ = id => document.getElementById(id);
 const book=courses[2].book;
@@ -1113,7 +1141,7 @@ function button(label, action, opts={}) {
 }
 function sayStatus(message) { $('status').textContent=message; }
 
-const punctuation = {'，':',','、':'﹑','。':'','？':'?','！':'!','：':':','；':'﹔','「':'﹁','」':'﹂','『':'﹃','』':'﹄'};
+const punctuation = {'（':'（','）':'）','，':',','、':'﹑','。':'','？':'?','！':'!','：':':','；':'﹔','「':'﹁','」':'﹂','『':'﹃','』':'﹄'};
 function syllable(line,i) {
   const char=line[i], next=line[i+1];
   const exact=courses[activeLesson].lineNotes?.[line]?.[i];
